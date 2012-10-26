@@ -1,0 +1,9 @@
+# START:basic
+host: localhost
+port: 3901
+# END:basic
+
+# START:timeout
+timeout:
+  invoke: 1.0
+# END:timeout

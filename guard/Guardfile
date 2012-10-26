@@ -1,0 +1,10 @@
+# A sample Guardfile
+# More info at https://github.com/guard/guard#readme
+
+guard 'cucumber' do
+  watch(%r{^features/.+\.feature$})               # <label id="code.guard.features"/>
+  watch(%r{^features/support/.+$}) { 'features' } # <label id="code.guard.support"/>
+  watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| # <label id="code.guard.definitions"/>
+    Dir[File.join("**/#{m[1]}.feature")][0] || 'features'
+  }
+end
