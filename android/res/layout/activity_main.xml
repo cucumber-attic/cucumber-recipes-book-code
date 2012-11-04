@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/addUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="addBookmark"
+        android:text="Add" />
+
+    <EditText
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/addUrl"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/addUrl"
+        android:ems="10"
+        android:hint="Enter a URL to bookmark" >
+
+        <requestFocus />
+    </EditText>
+
+    <ListView
+        android:id="@+id/bookmarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/addUrl"
+        tools:listitem="@android:layout/simple_list_item_1" >
+
+    </ListView>
+
+</RelativeLayout>
