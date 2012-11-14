@@ -1,8 +1,11 @@
+# START:when
 When /^I bookmark "(.*?)"$/ do |url|
   performAction 'enter_text_into_numbered_field', url, 1
   performAction 'click_on_view_by_id', 'addUrl'
 end
+# END:when
 
+# START:then
 Then /^I should see the following bookmarks:$/ do |expected|
   performAction 'wait_for_text', 'Enter a URL to bookmark', 5
 
@@ -16,3 +19,4 @@ Then /^I should see the following bookmarks:$/ do |expected|
   expected.map_headers! 'url' => 'text1'
   expected.diff! actual
 end
+# END:then

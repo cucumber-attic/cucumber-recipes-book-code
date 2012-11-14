@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+// START:edits
 public class MainActivity extends Activity {
     ArrayAdapter<String> adapter;
     ListView bookmarks;
@@ -21,23 +22,29 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
- 
+
         url = (EditText)findViewById(R.id.url);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        adapter = new ArrayAdapter<String>(
+            this, android.R.layout.simple_list_item_1);
         bookmarks = (ListView)findViewById(R.id.bookmarks);
         bookmarks.setAdapter(adapter);
     }
 
+    public void addBookmark(View v) {
+        adapter.add(url.getText().toString());
+        adapter.notifyDataSetChanged();
+
+        url.setText("");
+    }
+
+    // ... rest of class ...
+
+    // END:edits
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
-    
-    public void addBookmark(View v) {
-		adapter.add(url.getText().toString());
-		adapter.notifyDataSetChanged();
-		
-		url.setText("");
-    }
+    // START:edits
 }
+// END:edits
