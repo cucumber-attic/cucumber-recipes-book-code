@@ -8,18 +8,13 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class JpaUserRepository implements UserRepository {
+public class JpaBookRepository implements BookRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
     @Transactional
     @Override
-    public void save(User user) {
-        entityManager.persist(user);
-    }
-
-    @Override
-    public List<User> findAll() {
-        return entityManager.createQuery("SELECT b FROM User b", User.class).getResultList();
+    public void save(Book book) {
+        entityManager.persist(book);
     }
 }
