@@ -25,7 +25,7 @@
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 
         <!-- THIS IS WHERE THE MODELS ARE -->
-        <property name="packagesToScan" value="cucumber.examples.spring.txn"/>
+        <property name="packagesToScan" value="es.cukerecip"/>
 
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter">

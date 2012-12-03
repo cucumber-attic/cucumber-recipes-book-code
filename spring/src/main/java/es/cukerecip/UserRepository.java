@@ -1,4 +1,4 @@
-package cucumber.examples.spring.txn;
+package es.cukerecip;
 
 import java.util.List;
 

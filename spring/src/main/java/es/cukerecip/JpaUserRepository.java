@@ -1,4 +1,4 @@
-package cucumber.examples.spring.txn;
+package es.cukerecip;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,13 +8,18 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class JpaMessageRepository implements MessageRepository {
+public class JpaUserRepository implements UserRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
     @Transactional
     @Override
-    public void save(Message message) {
-        entityManager.persist(message);
+    public void save(User user) {
+        entityManager.persist(user);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return entityManager.createQuery("SELECT b FROM User b", User.class).getResultList();
     }
 }

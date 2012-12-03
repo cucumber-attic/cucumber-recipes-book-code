@@ -1,4 +1,4 @@
-package cucumber.examples.spring.txn;
+package es.cukerecip;
 
 import cucumber.api.java.en.Given;
 import org.springframework.beans.factory.annotation.Autowired;
