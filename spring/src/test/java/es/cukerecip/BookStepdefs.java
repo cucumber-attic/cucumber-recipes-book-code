@@ -10,7 +10,7 @@ public class BookStepdefs {
     private BookRepository bookRepository;
 
     @Given("^a writer has contributed to the following books:$")
-    public void a_writer_has_contributed_to_the_following_books(
+    public void a_writer_has_contributed_to_the_following_books( // <label id="code.spring.param"/>
         List<Book> books) throws Throwable {
 
         for (Book b : books) {

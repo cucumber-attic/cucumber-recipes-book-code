@@ -1,14 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>es.cukerecip</groupId>
     <artifactId>spring-example</artifactId>
     <version>1.0</version>
-
-    <properties>
-        <hibernate.version>4.1.4.Final</hibernate.version>
-        <hsqldb.version>2.2.8</hsqldb.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -16,16 +14,7 @@
             <artifactId>spring-tx</artifactId>
             <version>3.1.2.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>3.1.2.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-            <version>3.1.2.RELEASE</version>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
@@ -42,32 +31,30 @@
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>2.2.8</version>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>1.1.1</version>
-            <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-spring</artifactId>
             <version>1.1.1</version>
-            <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>1.1.1</version>
-            <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.10</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
