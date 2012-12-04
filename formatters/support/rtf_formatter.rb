@@ -15,7 +15,8 @@ class RtfFormatter
 
   # START:after_step_result
   def after_step_result(keyword, match, multiline, status,
-                        exception, indent, background)
+                        exception, indent, background,
+                        file_colon_line)
     @rtf.paragraph do |para|
       para << (status.to_s + ': ' + keyword + match.format_args)
     end
@@ -47,7 +48,8 @@ class RtfFormatter
 
   # START:formatted_step_result
   def after_step_result(keyword, match, multiline, status,
-                        exception, indent, background)
+                        exception, indent, background,
+                        file_colon_line)
     @rtf.paragraph do |para|
       para.apply(Styles[status]) do |text|
         text << (status.to_s + ': ' + keyword + match.format_args)
