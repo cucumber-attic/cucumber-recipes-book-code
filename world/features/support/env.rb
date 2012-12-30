@@ -4,8 +4,7 @@ require 'httparty'
 class ApiWorld
   def take_square_root(number)
     response = HTTParty.get "http://localhost:4567/api/square_root/#{number}"
-    response.body.to_f
-    @result = Math.sqrt(number)
+    @result = response.body.to_f
   end
 
   def square_root_result

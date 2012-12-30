@@ -1,4 +1,6 @@
 class BookPage
+  include RSpec::Matchers
+
   def visit_book_page(title)
     urls    = {'Cucumber Recipes' => 'http://pragprog.com/titles/dhwcr'}
     url     = urls[title] || raise("Unknown title #{title}")
