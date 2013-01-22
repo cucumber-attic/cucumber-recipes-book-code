@@ -22,17 +22,40 @@ class AppStarter < GuiQuery
   end
 end
 
-Before do
+module HasFrame
   runner  = GuiActionRunner.execute(AppStarter.new)
-  @window = FrameFixture.new(runner)
+  @@window = FrameFixture.new(runner)
+
+  # ... more methods go here ...
+  # END:before
+
+  # START:after
+  at_exit do
+    title = 'Confirm Exit - PresentationClock'
+
+    @@window.close
+    @@window.option_pane.require_title(title).yes_button.click
+  end
+  # END:after
+
+  # START:reset
+  def reset
+    button = @@window.button(JButtonMatcher.with_text 'Reset')
+    button.click
+  end
+  # END:reset
+
+  # START:look_for_text
+  def look_for_text(expected)
+    @@window.label JLabelMatcher.with_text(expected)
+  end
+  # END:look_for_text
+
+  # START:before
 end
+
+World(HasFrame)
 # END:before
 
 # START:after
-After do
-  title = 'Confirm Exit - PresentationClock'
-
-  @window.close
-  @window.option_pane.require_title(title).yes_button.click
-end
 # END:after
