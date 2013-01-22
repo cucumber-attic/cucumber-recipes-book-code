@@ -14,7 +14,7 @@ Bounce button2(BUTTON2, 100);
 #define QUERY   '?'
 #define PLAYER1 '1'
 #define PLAYER2 '2'
-#define BOTH    'B'
+#define BOTH    'b'
 #define NONE    -1
 
 int winner = NONE;
